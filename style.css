@@ -1,0 +1,213 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow&family=Barlow+Condensed:wght@400;700&display=swap');
+:root{
+    --Red: hsl(0, 100%, 68%);
+    --Very-Dark-Blue: hsl(230, 29%, 20%);
+    --Dark-Grayish-Blue: hsl(230, 11%, 40%);
+    --Grayish-Blue: hsl(231, 7%, 65%);
+    --Light-Grayish-Blue: hsl(207, 33%, 95%);
+    --font-family-Barlow: 'Barlow', sans-serif;
+    --font-family-Barlow-C: 'Barlow Condensed', sans-serif;
+}
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+  }
+  *, *:before, *:after {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+  }
+  body{
+      font-size: 16px;
+      font-family:var(--font-family-Barlow) ;
+  }
+  li{
+      list-style: none;
+  }
+  a{
+    text-decoration: none;
+
+  }
+.container{
+    max-width: 100%;
+    width: 120rem;
+    margin: 0 auto;
+  }
+  .flex{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+.flex-column{
+    flex-direction: column;
+}
+  nav{
+      padding: 2rem;
+      position: relative;
+      z-index: 200;
+  }
+  .menu{
+      display: none;
+  }
+  .hamburger{
+      display: flex;
+  }
+  .hamburger img:hover{
+      cursor: pointer;
+  }
+  nav .hamburger .close {
+    display: none;
+}
+
+nav .hamburger.show .open {
+    display: none;
+}
+
+nav .hamburger.show .close {
+    display: block;
+}
+.menu.show{
+  position: absolute;
+  display: flex;
+  flex-direction:column;
+  align-items: center;
+  z-index: 100;
+  background-color:#fff;
+  width:90%;
+  height: auto;
+  top: 9rem;  
+  border-radius: 1rem;
+}
+.menu.show li{
+    padding: 2rem;
+    width: 90%;
+    text-align: center;
+}
+.menu.show li:last-child{
+    border-top: 1px solid var(--Grayish-Blue);
+}
+.menu .nav-link{
+    text-transform: uppercase;
+    color: var(--Very-Dark-Blue);
+    font-weight: 700;
+    font-family: var(--font-family-Barlow-C);
+}
+
+.menu li:last-child .nav-link{
+    color: var(--Grayish-Blue);
+}
+
+  .container-device{
+      background-image: url(images/illustration-devices.svg);
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center left;
+      width: 100%;
+      height: 30rem;
+      margin: 5rem 0 8rem 0;
+    position:relative;
+    z-index: 100;
+     
+  }
+  .position-relative{
+      position: relative;
+  }
+  .container-nav::before{
+      content: '';
+      width: 15rem;
+      height: 48rem;
+       background-color: var(--Light-Grayish-Blue);
+       border-bottom-left-radius:3rem;
+       position:absolute;
+       top: 0;
+       right: 0;
+       z-index: 10;
+  }
+  .container-powerful{
+      padding: 2rem;
+      display: flex;
+      justify-items: flex-start;
+  }
+  .container-powerful span{
+      background-color: var(--Very-Dark-Blue);
+      color: var(--Light-Grayish-Blue);
+      border-radius: 3rem;
+      padding: .5rem 1rem;
+      text-transform: uppercase;
+      margin-right: 1rem;
+  }
+  .container-powerful h3{
+      text-transform: uppercase;
+      font-weight:400;
+      font-size: 1.2rem;
+  }
+  .container-powerful h2{
+    text-transform: uppercase;
+    font-weight:700;
+    font-family:var(--font-family-Barlow-C);
+    font-size: 4rem;
+    margin-bottom:2rem;  
+  }
+ .align-start{
+     align-self: flex-start;
+ }
+ .row-gap-2{
+     row-gap:2rem;
+ }
+ button{
+     background-color: var(--Red);
+     color: var(--Light-Grayish-Blue);
+     border: none;
+     padding: 1rem;
+     border-radius: .5rem;
+     cursor: pointer;
+     text-transform: uppercase;
+ }
+ .text-space{
+     letter-spacing: .5rem;
+ }
+ .word-spacing{
+     word-spacing: .5rem;
+ }
+ .column-gap-2{
+     column-gap:2rem;
+ }
+
+ @media screen and (min-width:768px){
+   .hamburger{
+       display: none;
+   } 
+   .menu{
+       display: flex;
+       column-gap: 3rem;
+   }
+ 
+   .menu .nav-link:hover{
+       border-bottom: 1px solid var(--Dark-Grayish-Blue);
+   } 
+   .menu li:last-child .nav-link:hover{
+    border-bottom: 1px solid var(--Grayish-Blue);
+}
+   section{
+       display: flex;
+       height: 100vh;
+       flex-direction: row-reverse;
+   }
+   .container-powerful .flex{
+       justify-content: center;
+   }
+   .container-powerful h2{
+       font-size: 6rem;
+   }
+   .container-powerful p{
+       width: 52%;
+   }
+
+   .container-device{
+       height: auto;
+       background-size: auto;
+   }
+   .container-nav::before{
+       width: 57%;
+   }
+ }
