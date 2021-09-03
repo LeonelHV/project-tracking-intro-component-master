@@ -147,6 +147,7 @@ nav .hamburger.show .close {
     font-family:var(--font-family-Barlow-C);
     font-size: 4rem;
     margin-bottom:2rem;  
+    color: var(--Very-Dark-Blue);
   }
  .align-start{
      align-self: flex-start;
